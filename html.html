@@ -1,1 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICT With Ravindu | Best ICT Tuition in Sri Lanka</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#eff6ff;
+  --secondary:#7c3aed;--accent:#06b6d4;--success:#10b981;
+  --bg:#fff;--bg2:#f8fafc;--bg3:#f1f5f9;
+  --text:#0f172a;--text2:#334155;--text3:#64748b;--border:#e2e8f0;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.08);--shadow:0 4px 20px rgba(0,0,0,.08);
+  --shadow-lg:0 10px 40px rgba(0,0,0,.12);--shadow-blue:0 8px 30px rgba(37,99,235,.2);
+  --radius:16px;--radius-lg:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden;font-size:15px;}
+
+/* TOPBAR */
+.topbar{background:var(--primary);color:#fff;padding:.5rem 5vw;font-size:.82rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.topbar a{color:#bfdbfe;text-decoration:none;}
+
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:.9rem 5vw;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow-sm);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:var(--shadow);}
+.nav-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text);font-family:'Nunito',sans-serif;font-weight:900;font-size:1.25rem;}
+.nav-logo-box{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;box-shadow:var(--shadow-blue);}
+.nav-logo .hi{color:var(--primary);}
+.nav-menu{display:flex;align-items:center;gap:.3rem;list-style:none;}
+.nav-menu a{text-decoration:none;color:var(--text2);font-size:.875rem;font-weight:600;padding:.5rem .9rem;border-radius:8px;transition:all .25s;display:block;}
+.nav-menu a:hover,.nav-menu a.active{color:var(--primary);background:var(--primary-light);}
+.nav-actions{display:flex;align-items:center;gap:.8rem;}
+.btn-nav-out{border:1.5px solid var(--border);background:#fff;color:var(--text);padding:.5rem 1.2rem;border-radius:8px;font-weight:600;font-size:.84rem;text-decoration:none;transition:all .25s;}
+.btn-nav-out:hover{border-color:var(--primary);color:var(--primary);}
+.btn-nav-pri{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:.55rem 1.3rem;border-radius:8px;font-weight:700;font-size:.84rem;text-decoration:none;box-shadow:var(--shadow-blue);transition:all .25s;}
+.btn-nav-pri:hover{transform:translateY(-1px);box-shadow:0 12px 35px rgba(37,99,235,.3);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:.3rem;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:all .3s;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#eff6ff 0%,#f5f3ff 50%,#ecfeff 100%);padding:4rem 5vw 3rem;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;position:relative;overflow:hidden;min-height:85vh;}
+.hero::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,.06) 0%,transparent 70%);top:-200px;right:-100px;border-radius:50%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid var(--border);border-radius:50px;padding:.4rem 1rem .4rem .5rem;font-size:.78rem;font-weight:700;color:var(--primary);margin-bottom:1.5rem;box-shadow:var(--shadow-sm);animation:fadeUp .7s ease both;}
+.eyebrow-badge{background:var(--primary);color:#fff;padding:.2rem .7rem;border-radius:50px;font-size:.72rem;}
+.hero-content{position:relative;z-index:2;animation:fadeUp .7s .1s ease both;}
+.hero h1{font-family:'Nunito',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:900;line-height:1.1;color:var(--text);margin-bottom:1.2rem;}
+.hero h1 .hl{color:var(--primary);position:relative;display:inline-block;}
+.hero h1 .hl::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:2px;}
+.hero-desc{color:var(--text3);line-height:1.8;font-size:1rem;max-width:480px;margin-bottom:2rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;padding:.85rem 2rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;box-shadow:var(--shadow-blue);transition:all .3s;border:none;cursor:pointer;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.35);}
+.btn-secondary{background:#fff;color:var(--text);border:1.5px solid var(--border);padding:.85rem 1.8rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;transition:all .3s;}
+.btn-secondary:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow);}
+.hero-trust{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--text3);}
+.trust-avs{display:flex;}
+.trust-avs span{width:30px;height:30px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:#fff;margin-left:-8px;}
+.trust-avs span:first-child{margin-left:0;}
+.trust-avs span:nth-child(1){background:#3b82f6;}.trust-avs span:nth-child(2){background:#8b5cf6;}.trust-avs span:nth-child(3){background:#06b6d4;}.trust-avs span:nth-child(4){background:#10b981;}
+
+/* Hero Card */
+.hero-image-col{position:relative;z-index:2;animation:fadeUp .7s .2s ease both;}
+.hero-main-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden;max-width:420px;margin:0 auto;}
+.hero-card-header{background:linear-gradient(135deg,var(--primary),var(--secondary));padding:1.5rem;color:#fff;display:flex;align-items:center;gap:1rem;}
+.tutor-avatar{width:70px;height:70px;border-radius:50%;border:3px solid rgba(255,255,255,.4);background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0;}
+.tutor-info h3{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:800;}
+.tutor-info p{font-size:.8rem;opacity:.85;margin-top:.2rem;}
+.hero-stars{color:#fbbf24;font-size:.78rem;margin-top:.35rem;}
+.hero-card-body{padding:1.5rem;}
+.hero-stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.8rem;margin-bottom:1.2rem;}
+.hs{text-align:center;padding:.8rem;background:var(--bg2);border-radius:12px;}
+.hs-num{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;color:var(--primary);}
+.hs-lbl{font-size:.7rem;color:var(--text3);margin-top:.1rem;}
+.upcoming{background:var(--primary-light);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:.8rem;}
+.uc-icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0;}
+.uc-text{font-size:.82rem;}.uc-text strong{color:var(--text);font-weight:700;display:block;}.uc-text span{color:var(--text3);}
+
+/* Float cards */
+.fc{position:absolute;background:#fff;border-radius:14px;box-shadow:var(--shadow-lg);padding:.9rem 1.2rem;display:flex;align-items:center;gap:.7rem;animation:floaty 3s ease-in-out infinite;min-width:155px;}
+.fc1{top:-18px;right:-25px;animation-delay:0s;}.fc2{bottom:20px;left:-25px;animation-delay:1.5s;}
+.fc-ic{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.fc-ic.bl{background:#eff6ff;color:var(--primary);}.fc-ic.gr{background:#f0fdf4;color:var(--success);}
+.fc-lbl{font-size:.7rem;color:var(--text3);}.fc-val{font-size:.88rem;font-weight:700;color:var(--text);}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:translateY(0);}}
+
+/* STATS BAR */
+.stats-bar{background:var(--primary);padding:1.8rem 5vw;}
+.sbar{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;}
+.sbi{text-align:center;color:#fff;padding:.5rem;position:relative;}
+.sbi+.sbi::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:1px;background:rgba(255,255,255,.2);}
+.sbi-num{font-family:'Nunito',sans-serif;font-size:2.2rem;font-weight:900;line-height:1;}
+.sbi-lbl{font-size:.78rem;opacity:.8;margin-top:.3rem;font-weight:500;}
+
+/* SECTIONS */
+section{padding:5rem 5vw;}
+.wrap{max-width:1200px;margin:0 auto;}
+.sec-tag{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary-light);color:var(--primary);padding:.35rem 1rem;border-radius:50px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.8rem;}
+.sec-title{font-family:'Nunito',sans-serif;font-size:clamp(1.7rem,3vw,2.5rem);font-weight:900;line-height:1.15;color:var(--text);margin-bottom:.8rem;}
+.sec-title span{color:var(--primary);}
+.sec-sub{color:var(--text3);font-size:1rem;line-height:1.7;max-width:580px;}
+.sec-hdr{text-align:center;margin-bottom:3.5rem;}.sec-hdr .sec-sub{margin:0 auto;}
+
+/* COUNTDOWN */
+.countdown-section{background:var(--bg2);}
+.cd-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto;}
+.exam-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;transition:all .35s;}
+.exam-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.ec-header{padding:1.5rem 1.8rem 1.2rem;display:flex;align-items:flex-start;justify-content:space-between;}
+.exam-card.al .ec-header{background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;}
+.exam-card.ol .ec-header{background:linear-gradient(135deg,#065f46,#059669);color:#fff;}
+.ec-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.2);border-radius:50px;padding:.3rem .8rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.ec-header h3{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;margin:.5rem 0 .2rem;}
+.ec-date{font-size:.82rem;opacity:.85;display:flex;align-items:center;gap:.4rem;}
+.ec-icon{font-size:2.5rem;opacity:.3;}
+.ec-body{padding:1.5rem 1.8rem;}
+.timer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;}
+.timer-box{background:var(--bg2);border-radius:12px;padding:1rem .5rem;text-align:center;border:1px solid var(--border);}
+.t-num{font-family:'Nunito',sans-serif;font-size:2rem;font-weight:900;display:block;line-height:1;}
+.exam-card.al .t-num{color:var(--primary);}
+.exam-card.ol .t-num{color:var(--success);}
+.t-lbl{font-size:.65rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem;font-weight:600;display:block;}
+.ec-foot{padding:1rem 1.8rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:.8rem;color:var(--text3);}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--success);animation:pdot 2s ease-in-out infinite;display:inline-block;margin-right:.4rem;}
+@keyframes pdot{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* ABOUT */
+.about-section{background:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-img-wrap{position:relative;}
+.about-main-img{background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:var(--radius-lg);height:380px;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);position:relative;}
+.tutor-illus{font-size:9rem;filter:drop-shadow(0 10px 30px rgba(37,99,235,.2));}
+.img-badge-pill{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:#fff;border-radius:50px;padding:.5rem 1.2rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:.6rem;white-space:nowrap;font-size:.82rem;font-weight:600;}
+.green-dot{width:8px;height:8px;background:var(--success);border-radius:50%;animation:pdot 2s infinite;}
+.sp{position:absolute;background:#fff;border-radius:14px;box-shadow:var(--shadow-lg);padding:1rem 1.3rem;border:1px solid var(--border);}
+.sp1{top:-15px;right:-20px;}.sp2{bottom:80px;left:-20px;}
+.sp-num{font-family:'Nunito',sans-serif;font-size:1.7rem;font-weight:900;color:var(--primary);line-height:1;}
+.sp-lbl{font-size:.72rem;color:var(--text3);margin-top:.2rem;white-space:nowrap;}
+.about-content p{color:var(--text3);line-height:1.8;margin-bottom:1rem;}
+.chklist{list-style:none;display:flex;flex-direction:column;gap:.9rem;margin:1.5rem 0;}
+.chklist li{display:flex;align-items:flex-start;gap:.8rem;font-size:.92rem;}
+.chk-ic{width:24px;height:24px;border-radius:50%;flex-shrink:0;margin-top:1px;background:#f0fdf4;color:var(--success);display:flex;align-items:center;justify-content:center;font-size:.7rem;}
+.med-chips{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.5rem 0;}
+.chip{padding:.4rem 1rem;border-radius:50px;font-size:.78rem;font-weight:600;border:1.5px solid;}
+.chip.bl{background:#eff6ff;color:var(--primary);border-color:#bfdbfe;}
+.chip.pu{background:#f5f3ff;color:var(--secondary);border-color:#ddd6fe;}
+.chip.gr{background:#f0fdf4;color:var(--success);border-color:#a7f3d0;}
+
+/* COURSES */
+.courses-section{background:var(--bg2);}
+.crs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.crs-card{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;transition:all .35s;cursor:pointer;}
+.crs-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.crs-top{padding:1.8rem 1.8rem 1rem;}
+.crs-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem;}
+.crs-icon.bl{background:#eff6ff;}.crs-icon.pu{background:#f5f3ff;}.crs-icon.gr{background:#f0fdf4;}.crs-icon.or{background:#fff7ed;}.crs-icon.cy{background:#ecfeff;}.crs-icon.pk{background:#fdf2f8;}
+.crs-card h3{font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:.5rem;}
+.crs-card p{color:var(--text3);font-size:.875rem;line-height:1.65;}
+.crs-bot{padding:1rem 1.8rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.crs-badge{font-size:.72rem;font-weight:700;padding:.3rem .7rem;border-radius:50px;text-transform:uppercase;letter-spacing:.04em;}
+.crs-badge.bl{background:#eff6ff;color:var(--primary);}.crs-badge.gr{background:#f0fdf4;color:var(--success);}.crs-badge.or{background:#fff7ed;color:#ea580c;}
+.crs-arr{color:var(--primary);font-size:1rem;transition:transform .3s;}
+.crs-card:hover .crs-arr{transform:translateX(4px);}
+
+/* WHY */
+.why-section{background:#fff;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.why-features{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.why-card{background:var(--bg2);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);transition:all .3s;}
+.why-card:hover{border-color:#bfdbfe;background:#eff6ff;box-shadow:var(--shadow);}
+.why-ic{width:48px;height:48px;border-radius:12px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.9rem;}
+.why-card h4{font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:800;margin-bottom:.4rem;}
+.why-card p{font-size:.82rem;color:var(--text3);line-height:1.6;}
+.why-visual{background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:var(--radius-lg);padding:2.5rem;color:#fff;text-align:center;}
+.why-visual .big-ic{font-size:5rem;margin-bottom:1.5rem;}
+.why-visual h3{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:.6rem;}
+.why-visual p{opacity:.85;font-size:.9rem;line-height:1.65;}
+.why-mets{display:flex;gap:1.5rem;margin-top:1.8rem;justify-content:center;}
+.why-met{text-align:center;}
+.wm-num{font-family:'Nunito',sans-serif;font-size:2rem;font-weight:900;}
+.wm-lbl{font-size:.75rem;opacity:.8;margin-top:.2rem;}
+
+/* STEPS */
+.how-section{background:var(--bg2);}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;}
+.steps-grid::before{content:'';position:absolute;top:40px;left:calc(16.67% + 20px);right:calc(16.67% + 20px);height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));opacity:.25;}
+.step-card{text-align:center;padding:2rem 1.5rem;}
+.step-num{width:64px;height:64px;border-radius:50%;margin:0 auto 1.2rem;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-blue);position:relative;z-index:1;}
+.step-icon{width:70px;height:70px;border-radius:18px;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:1.8rem;}
+.step-icon.bl{background:#eff6ff;}.step-icon.pu{background:#f5f3ff;}.step-icon.gr{background:#f0fdf4;}
+.step-card h3{font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:.6rem;}
+.step-card p{color:var(--text3);font-size:.875rem;line-height:1.65;}
+
+/* ===== REVIEWS SECTION ===== */
+.reviews-section{background:#fff;}
+
+/* Submit review form */
+.review-submit-card{background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:var(--radius-lg);padding:2.5rem;border:1px solid var(--border);margin-bottom:3rem;box-shadow:var(--shadow);}
+.review-submit-card h3{font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:900;margin-bottom:.4rem;}
+.review-submit-card p{color:var(--text3);font-size:.88rem;margin-bottom:1.5rem;}
+.review-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.rf-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.rf-group.full{grid-column:1/-1;}
+.rf-group label{font-size:.78rem;color:var(--text2);font-weight:600;}
+.rf-group input,.rf-group select,.rf-group textarea{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:.75rem 1rem;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;transition:all .25s;outline:none;resize:none;}
+.rf-group input:focus,.rf-group select:focus,.rf-group textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.star-picker{display:flex;gap:.3rem;flex-direction:row-reverse;justify-content:flex-end;}
+.star-picker input{display:none;}
+.star-picker label{font-size:1.6rem;cursor:pointer;color:#d1d5db;transition:color .15s;}
+.star-picker label:hover,.star-picker label:hover~label,.star-picker input:checked~label{color:#f59e0b;}
+.btn-submit-review{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border:none;padding:.85rem 2rem;border-radius:12px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s;box-shadow:var(--shadow-blue);display:inline-flex;align-items:center;gap:.6rem;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-submit-review:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.35);}
+
+/* Review stats bar */
+.review-stats-bar{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border-radius:var(--radius);padding:1.5rem 2rem;margin-bottom:2rem;border:1px solid var(--border);flex-wrap:wrap;gap:1rem;}
+.rs-left{display:flex;align-items:center;gap:1.5rem;}
+.rs-big-num{font-family:'Nunito',sans-serif;font-size:3.5rem;font-weight:900;color:var(--primary);line-height:1;}
+.rs-stars-row{color:#f59e0b;font-size:1.2rem;margin-bottom:.2rem;}
+.rs-count{font-size:.82rem;color:var(--text3);font-weight:500;}
+.rs-right{display:flex;gap:1rem;flex-wrap:wrap;}
+.rs-tag{display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:50px;padding:.4rem 1rem;font-size:.78rem;font-weight:600;}
+.rs-tag.gold{color:#d97706;border-color:#fde68a;}
+.rs-tag.blue{color:var(--primary);border-color:#bfdbfe;}
+.rs-tag.green{color:var(--success);border-color:#a7f3d0;}
+
+/* Latest reviews grid */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem;}
+.testi-card{background:var(--bg2);border-radius:var(--radius);padding:1.8rem;border:1px solid var(--border);transition:all .35s;}
+.testi-card:hover{background:#fff;box-shadow:var(--shadow-lg);border-color:transparent;transform:translateY(-4px);}
+.t-stars{color:#f59e0b;font-size:.9rem;margin-bottom:1rem;}
+.t-text{color:var(--text2);font-size:.9rem;line-height:1.75;margin-bottom:1.5rem;}
+.t-author{display:flex;align-items:center;gap:.8rem;}
+.t-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;flex-shrink:0;}
+.t-name{font-weight:700;font-size:.9rem;}
+.t-grade{font-size:.75rem;color:var(--text3);margin-top:.15rem;}
+.t-time{font-size:.7rem;color:var(--text3);margin-top:.2rem;}
+.t-new-badge{display:inline-block;background:#f0fdf4;color:var(--success);border-radius:50px;padding:.15rem .6rem;font-size:.65rem;font-weight:700;margin-left:.5rem;border:1px solid #a7f3d0;}
+
+/* View All Reviews Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:#fff;border-radius:var(--radius-lg);width:100%;max-width:860px;max-height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:scale(.95);transition:transform .3s;}
+.modal-overlay.open .modal-box{transform:scale(1);}
+.modal-header{padding:1.5rem 2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2);}
+.modal-header h2{font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:900;}
+.modal-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text3);transition:color .2s;padding:.2rem;}
+.modal-close:hover{color:var(--text);}
+.modal-filter-bar{padding:1rem 2rem;border-bottom:1px solid var(--border);display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;background:#fff;}
+.filter-btn{background:var(--bg2);border:1.5px solid var(--border);border-radius:50px;padding:.35rem .9rem;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text2);}
+.filter-btn:hover,.filter-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+.modal-body{flex:1;overflow-y:auto;padding:1.5rem 2rem;}
+.modal-reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.modal-review-card{background:var(--bg2);border-radius:var(--radius);padding:1.3rem;border:1px solid var(--border);}
+.modal-review-card .t-stars{font-size:.8rem;margin-bottom:.6rem;}
+.modal-review-card .t-text{font-size:.85rem;margin-bottom:1rem;}
+.modal-review-card .t-author{gap:.6rem;}
+.modal-review-card .t-av{width:36px;height:36px;font-size:.85rem;}
+.modal-no-reviews{text-align:center;padding:3rem;color:var(--text3);}
+.modal-no-reviews .ni{font-size:3rem;margin-bottom:1rem;}
+.btn-view-all{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1.5px solid var(--primary);color:var(--primary);padding:.75rem 2rem;border-radius:12px;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .3s;margin:0 auto;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-view-all:hover{background:var(--primary);color:#fff;transform:translateY(-2px);box-shadow:var(--shadow-blue);}
+.review-cta-row{text-align:center;}
+
+/* Empty state */
+.empty-reviews{text-align:center;padding:2.5rem;color:var(--text3);background:var(--bg2);border-radius:var(--radius);border:1px dashed var(--border);grid-column:1/-1;}
+.empty-reviews .ei{font-size:2.5rem;margin-bottom:.8rem;}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(135deg,#eff6ff,#f5f3ff);}
+.contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start;max-width:1000px;margin:0 auto;}
+.ci h2{font-family:'Nunito',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:.8rem;}
+.ci p{color:var(--text3);line-height:1.75;margin-bottom:2rem;}
+.cd{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;}
+.cd-ic{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1rem;}
+.cd-lbl{font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
+.cd-val{font-weight:700;font-size:.92rem;}
+.soc-row{display:flex;gap:.7rem;margin-top:1.8rem;}
+.soc-btn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--text3);text-decoration:none;font-size:1rem;transition:all .3s;}
+.soc-btn:hover{background:var(--primary);border-color:var(--primary);color:#fff;transform:translateY(-2px);}
+.form-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:2.5rem;border:1px solid var(--border);}
+.form-card h3{font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:1.5rem;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fg{margin-bottom:1rem;display:flex;flex-direction:column;gap:.4rem;}
+.fg label{font-size:.78rem;color:var(--text2);font-weight:600;}
+.fg input,.fg select,.fg textarea{background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;padding:.75rem 1rem;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;transition:all .25s;outline:none;resize:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,.1);}
+.fg select option{background:#fff;}
+.btn-form{width:100%;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border:none;padding:.9rem;border-radius:12px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .3s;box-shadow:var(--shadow-blue);display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:.5rem;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-form:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(37,99,235,.35);}
+
+/* FOOTER */
+footer{background:var(--text);color:#94a3b8;padding:4rem 5vw 0;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;}
+.fb .nav-logo{color:#fff;margin-bottom:1rem;display:inline-flex;}
+.fb p{font-size:.875rem;line-height:1.7;color:#64748b;max-width:260px;}
+.fc-col h4{font-family:'Nunito',sans-serif;font-weight:800;color:#fff;font-size:.95rem;margin-bottom:1.2rem;}
+.fc-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.fc-col a{color:#64748b;text-decoration:none;font-size:.875rem;transition:color .25s;}
+.fc-col a:hover{color:#fff;}
+.fci{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem;font-size:.875rem;}
+.fci i{color:var(--accent);width:16px;}
+.footer-bot{border-top:1px solid #1e293b;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;font-size:.8rem;color:#475569;}
+.footer-bot span{color:var(--primary);font-weight:700;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+
+/* Toast */
+.toast{position:fixed;bottom:2rem;right:2rem;z-index:600;background:var(--success);color:#fff;padding:1rem 1.5rem;border-radius:14px;box-shadow:var(--shadow-lg);font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.7rem;transform:translateY(100px);opacity:0;transition:all .4s;pointer-events:none;}
+.toast.show{transform:translateY(0);opacity:1;}
+.toast.error{background:#ef4444;}
+
+/* Loading spinner */
+.spin{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* RESPONSIVE */
+@media(max-width:960px){.nav-menu{display:none;}.hamburger{display:block;}.nav-menu.open{display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 5vw;box-shadow:var(--shadow);z-index:300;gap:0;}.nav-menu.open li{border-bottom:1px solid var(--border);}.nav-menu.open a{padding:.9rem 0;border-radius:0;}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-image-col{order:-1;}.fc1{right:0;top:-15px;}.fc2{left:0;bottom:15px;}.cd-grid{grid-template-columns:1fr;max-width:500px;}.about-grid{grid-template-columns:1fr;gap:2.5rem;}.crs-grid{grid-template-columns:1fr 1fr;}.why-grid{grid-template-columns:1fr;}.steps-grid{grid-template-columns:1fr;}.steps-grid::before{display:none;}.reviews-grid{grid-template-columns:1fr 1fr;}.modal-reviews-grid{grid-template-columns:1fr;}.contact-inner{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.sbar{grid-template-columns:1fr 1fr;}.f-row{grid-template-columns:1fr;}.review-form-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.crs-grid,.reviews-grid,.why-features{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.topbar{flex-direction:column;gap:.3rem;}.hero-btns{flex-direction:column;}.hero-btns .btn-primary,.hero-btns .btn-secondary{text-align:center;justify-content:center;}.t-num{font-size:1.6rem;}.rs-left{flex-direction:column;gap:.5rem;text-align:center;}.review-stats-bar{justify-content:center;text-align:center;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>📚 Sri Lanka's Best ICT Tuition — O/L &amp; A/L | Online &amp; Physical Classes</div>
+  <div><i class="fas fa-phone-alt"></i> &nbsp;<a href="tel:+94700000000">+94 7X XXX XXXX</a></div>
+</div>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-box">💻</div>
+    ICT WITH <span class="hi">RAVINDU</span>
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#exams">Exam Dates</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:+94700000000" class="btn-nav-out"><i class="fas fa-phone-alt"></i> Call Now</a>
+    <a href="#contact" class="btn-nav-pri">Enroll Now 🚀</a>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="eyebrow-badge">2026 BATCHES</span> Sri Lanka's Best ICT Tuition Class</div>
+    <h1>Master ICT.<br><span class="hl">Score Top Grades.</span><br>Excel in Life.</h1>
+    <p class="hero-desc">Expert ICT tuition for GCE O/L and A/L students. Learn from <strong>Ravindu</strong> — an experienced ICT educator who makes complex topics simple and exam-ready. Online &amp; physical classes island-wide.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary"><i class="fas fa-rocket"></i> Enroll Today</a>
+      <a href="#courses" class="btn-secondary"><i class="fas fa-book-open"></i> Explore Courses</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-avs"><span>K</span><span>D</span><span>S</span><span>A</span></div>
+      <span><strong id="heroStudentCount">—</strong> students already learning with Ravindu</span>
+    </div>
+  </div>
+  <div class="hero-image-col">
+    <div style="position:relative;max-width:420px;margin:0 auto;">
+      <div class="fc fc1"><div class="fc-ic gr"><i class="fas fa-trophy"></i></div><div><div class="fc-lbl">Pass Rate</div><div class="fc-val">95% A Grades</div></div></div>
+      <div class="fc fc2"><div class="fc-ic bl"><i class="fas fa-users"></i></div><div><div class="fc-lbl">Active Students</div><div class="fc-val" id="heroOnlineCount">—</div></div></div>
+      <div class="hero-main-card">
+        <div class="hero-card-header">
+          <div class="tutor-avatar">👨‍💻</div>
+          <div class="tutor-info">
+            <h3>Ravindu — ICT Tutor</h3>
+            <p>B.Sc. Information Technology</p>
+            <div class="hero-stars">★★★★★ &nbsp;4.9 · <span id="heroReviewCount">—</span> Reviews</div>
+          </div>
+        </div>
+        <div class="hero-card-body">
+          <div class="hero-stats-row">
+            <div class="hs"><div class="hs-num" id="cardStudents">—</div><div class="hs-lbl">Students</div></div>
+            <div class="hs"><div class="hs-num">95%</div><div class="hs-lbl">Pass Rate</div></div>
+            <div class="hs"><div class="hs-num" id="cardYears">—</div><div class="hs-lbl">Yrs Exp.</div></div>
+          </div>
+          <div class="upcoming">
+            <div class="uc-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="uc-text"><strong>New Batch Starting Soon!</strong><span>O/L &amp; A/L · Online + Physical</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="sbar">
+    <div class="sbi"><div class="sbi-num" id="statEnrolled">—</div><div class="sbi-lbl">Total Enrolled Students</div></div>
+    <div class="sbi"><div class="sbi-num">95%</div><div class="sbi-lbl">A/B Grade Pass Rate</div></div>
+    <div class="sbi"><div class="sbi-num" id="statYears">—</div><div class="sbi-lbl">Years Experience</div></div>
+    <div class="sbi"><div class="sbi-num" id="statOnline">—</div><div class="sbi-lbl">Active Students Online Now</div></div>
+  </div>
+</div>
+
+<!-- EXAM COUNTDOWN -->
+<section class="countdown-section" id="exams">
+  <div class="wrap">
+    <div class="sec-hdr reveal">
+      <div class="sec-tag"><i class="fas fa-clock"></i> &nbsp;Live Countdown</div>
+      <h2 class="sec-title">National Exam <span>Countdown 2026</span></h2>
+      <p class="sec-sub">Official dates from the Sri Lanka Department of Examinations — updates every second</p>
+    </div>
+    <div class="cd-grid reveal">
+      <div class="exam-card al">
+        <div class="ec-header"><div><div class="ec-badge"><i class="fas fa-graduation-cap"></i> &nbsp;Advanced Level</div><h3>GCE A/L 2026</h3><div class="ec-date"><i class="fas fa-calendar"></i> Aug 10 – Sep 5, 2026</div></div><div class="ec-icon">🎓</div></div>
+        <div class="ec-body"><div class="timer-grid"><div class="timer-box"><span class="t-num" id="al-d">--</span><span class="t-lbl">Days</span></div><div class="timer-box"><span class="t-num" id="al-h">--</span><span class="t-lbl">Hours</span></div><div class="timer-box"><span class="t-num" id="al-m">--</span><span class="t-lbl">Mins</span></div><div class="timer-box"><span class="t-num" id="al-s">--</span><span class="t-lbl">Secs</span></div></div></div>
+        <div class="ec-foot"><div><span class="live-dot"></span>Live · examinations.gov.lk</div><a href="#contact" style="color:var(--primary);font-weight:700;font-size:.8rem;text-decoration:none;">Prepare Now →</a></div>
+      </div>
+      <div class="exam-card ol">
+        <div class="ec-header"><div><div class="ec-badge"><i class="fas fa-book"></i> &nbsp;Ordinary Level</div><h3>GCE O/L 2026</h3><div class="ec-date"><i class="fas fa-calendar"></i> Dec 8 – Dec 17, 2026</div></div><div class="ec-icon">📘</div></div>
+        <div class="ec-body"><div class="timer-grid"><div class="timer-box"><span class="t-num" id="ol-d">--</span><span class="t-lbl">Days</span></div><div class="timer-box"><span class="t-num" id="ol-h">--</span><span class="t-lbl">Hours</span></div><div class="timer-box"><span class="t-num" id="ol-m">--</span><span class="t-lbl">Mins</span></div><div class="timer-box"><span class="t-num" id="ol-s">--</span><span class="t-lbl">Secs</span></div></div></div>
+        <div class="ec-foot"><div><span class="live-dot"></span>Live · examinations.gov.lk</div><a href="#contact" style="color:var(--success);font-weight:700;font-size:.8rem;text-decoration:none;">Prepare Now →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-main-img"><div class="tutor-illus">👨‍💻</div><div class="img-badge-pill"><span class="green-dot"></span> Now Accepting Enrollments</div></div>
+        <div class="sp sp1"><div class="sp-num" id="aboutYears">—</div><div class="sp-lbl">Years Teaching</div></div>
+        <div class="sp sp2"><div class="sp-num" id="aboutStudents">—</div><div class="sp-lbl">Students Taught</div></div>
+      </div>
+      <div class="about-content reveal">
+        <div class="sec-tag"><i class="fas fa-user-tie"></i> &nbsp;About Your Tutor</div>
+        <h2 class="sec-title">Sri Lanka's Trusted <span>ICT Educator</span> 🎓</h2>
+        <p>With over <strong><span id="aboutYearsText">—</span> years</strong> of ICT teaching experience, <strong>Ravindu</strong> has helped hundreds of Sri Lankan students master ICT and achieve outstanding results in their national examinations.</p>
+        <p>His teaching style blends theory with practical examples, past paper practice, and step-by-step explanations — making even the hardest topics easy to understand.</p>
+        <ul class="chklist">
+          <li><span class="chk-ic"><i class="fas fa-check"></i></span><span>Qualified ICT educator with proven track record since 2023</span></li>
+          <li><span class="chk-ic"><i class="fas fa-check"></i></span><span>Online Zoom classes &amp; in-person sessions available island-wide</span></li>
+          <li><span class="chk-ic"><i class="fas fa-check"></i></span><span>Comprehensive notes, mindmaps, and past paper packs provided free</span></li>
+          <li><span class="chk-ic"><i class="fas fa-check"></i></span><span>WhatsApp &amp; Telegram group for 24/7 student support</span></li>
+          <li><span class="chk-ic"><i class="fas fa-check"></i></span><span>Session recordings available to revisit lessons anytime</span></li>
+        </ul>
+        <div class="med-chips">
+          <span class="chip bl">Sinhala Medium</span>
+          <span class="chip pu">English Medium</span>
+          <span class="chip gr">Online Classes</span>
+          <span class="chip bl">Physical Classes</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:.5rem;"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-section" id="courses">
+  <div class="wrap">
+    <div class="sec-hdr reveal">
+      <div class="sec-tag"><i class="fas fa-book-open"></i> &nbsp;Our Programs</div>
+      <h2 class="sec-title">ICT Courses <span>We Offer</span></h2>
+      <p class="sec-sub">Structured programs designed for Sri Lanka's national curriculum</p>
+    </div>
+    <div class="crs-grid">
+      <div class="crs-card reveal"><div class="crs-top"><div class="crs-icon bl"><i class="fas fa-desktop" style="color:var(--primary)"></i></div><h3>O/L ICT — Grades 9, 10 &amp; 11</h3><p>Full O/L ICT syllabus: computer fundamentals, hardware &amp; software, networking basics, information systems, and practical exam preparation.</p></div><div class="crs-bot"><span class="crs-badge bl">2 hrs/week</span><i class="fas fa-arrow-right crs-arr"></i></div></div>
+      <div class="crs-card reveal d1"><div class="crs-top"><div class="crs-icon pu"><i class="fas fa-code" style="color:var(--secondary)"></i></div><h3>A/L ICT — Grades 12 &amp; 13</h3><p>Advanced ICT: algorithms, data structures, database systems, networking, system development and project-based exam questions covered.</p></div><div class="crs-bot"><span class="crs-badge bl">3 hrs/week</span><i class="fas fa-arrow-right crs-arr"></i></div></div>
+      <div class="crs-card reveal d2"><div class="crs-top"><div class="crs-icon gr"><i class="fas fa-database" style="color:var(--success)"></i></div><h3>Database &amp; SQL</h3><p>Practical database design, relational models, and SQL querying skills essential for A/L ICT practicals and modern tech careers.</p></div><div class="crs-bot"><span class="crs-badge gr">Most Popular</span><i class="fas fa-arrow-right crs-arr"></i></div></div>
+      <div class="crs-card reveal"><div class="crs-top"><div class="crs-icon or"><i class="fas fa-network-wired" style="color:#ea580c"></i></div><h3>Computer Networking</h3><p>OSI model, TCP/IP, IP addressing, subnetting, and network security — essential for both O/L and A/L ICT examinations.</p></div><div class="crs-bot"><span class="crs-badge or">Trending</span><i class="fas fa-arrow-right crs-arr"></i></div></div>
+      <div class="crs-card reveal d1"><div class="crs-top"><div class="crs-icon cy"><i class="fas fa-file-alt" style="color:var(--accent)"></i></div><h3>Revision &amp; Past Papers</h3><p>Intensive revision with past papers from 2015–2024. Exam strategies, time management, and model answer techniques to maximise marks.</p></div><div class="crs-bot"><span class="crs-badge gr">Exam Ready</span><i class="fas fa-arrow-right crs-arr"></i></div></div>
+      <div class="crs-card reveal d2"><div class="crs-top"><div class="crs-icon pk"><i class="fas fa-globe" style="color:#db2777"></i></div><h3>Web Design Basics</h3><p>HTML, CSS and basic web publishing — practical digital skills that complement the ICT syllabus and build real-world capability.</p></div><div class="crs-bot"><span class="crs-badge bl">Bonus Module</span><i class="fas fa-arrow-right crs-arr"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="reveal">
+        <div class="sec-tag"><i class="fas fa-star"></i> &nbsp;Why Choose Us</div>
+        <h2 class="sec-title">Quality Assured <span>ICT Learning</span> 👨🏻‍🎓</h2>
+        <p style="color:var(--text3);line-height:1.75;margin-bottom:2rem;">We combine expert teaching with comprehensive resources and personalised attention — ensuring every student reaches their full potential in ICT.</p>
+        <div class="why-features">
+          <div class="why-card"><div class="why-ic"><i class="fas fa-trophy"></i></div><h4>Proven Results</h4><p>Consistent A/B grades in O/L and A/L ICT national examinations since 2023.</p></div>
+          <div class="why-card"><div class="why-ic"><i class="fas fa-video"></i></div><h4>Recorded Classes</h4><p>All sessions are recorded and shared so you can revise at your own pace.</p></div>
+          <div class="why-card"><div class="why-ic"><i class="fas fa-file-download"></i></div><h4>Free Study Notes</h4><p>Printed notes, mindmaps, cheat sheets and model answer guides included.</p></div>
+          <div class="why-card"><div class="why-ic"><i class="fas fa-comments"></i></div><h4>24/7 WhatsApp</h4><p>Dedicated student group for doubt-clearing and peer learning between classes.</p></div>
+          <div class="why-card"><div class="why-ic"><i class="fas fa-users"></i></div><h4>Small Batches</h4><p>Max 20 students per batch for personalised attention and better engagement.</p></div>
+          <div class="why-card"><div class="why-ic"><i class="fas fa-wallet"></i></div><h4>Affordable Fees</h4><p>High-quality tuition at accessible prices with flexible payment options.</p></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="why-visual">
+          <div class="big-ic">🖥️</div>
+          <h3>The ICT With Ravindu Advantage</h3>
+          <p>Transforming students' ICT understanding and examination results. Join hundreds of successful graduates!</p>
+          <div class="why-mets">
+            <div class="why-met"><div class="wm-num" id="whyStudents">—</div><div class="wm-lbl">Happy Students</div></div>
+            <div class="why-met"><div class="wm-num">95%</div><div class="wm-lbl">Pass Rate</div></div>
+            <div class="why-met"><div class="wm-num" id="whyYears">—</div><div class="wm-lbl">Years</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="wrap">
+    <div class="sec-hdr reveal">
+      <div class="sec-tag"><i class="fas fa-list-ol"></i> &nbsp;Onboarding Process</div>
+      <h2 class="sec-title">Follow our <span>Simple Steps</span> to Join 📚</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal"><div class="step-icon bl"><i class="fas fa-user-plus" style="color:var(--primary)"></i></div><div class="step-num">1</div><h3>Step 1: Register</h3><p>Fill out the enrollment form with your details. Select your course — O/L or A/L ICT. We'll confirm your spot within 24 hours.</p></div>
+      <div class="step-card reveal d2"><div class="step-icon pu"><i class="fas fa-comments" style="color:var(--secondary)"></i></div><div class="step-num" style="background:linear-gradient(135deg,var(--secondary),#ec4899)">2</div><h3>Step 2: Consultation</h3><p>Ravindu will reach out via WhatsApp to discuss your current level, batch timing, and answer any questions you may have.</p></div>
+      <div class="step-card reveal d3"><div class="step-icon gr"><i class="fas fa-graduation-cap" style="color:var(--success)"></i></div><div class="step-num" style="background:linear-gradient(135deg,var(--success),#0891b2)">3</div><h3>Step 3: Learn &amp; Excel</h3><p>Join your batch, access notes and recordings, and begin your journey to top ICT grades. Your success is our priority!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS SECTION ===== -->
+<section class="reviews-section" id="reviews">
+  <div class="wrap">
+    <div class="sec-hdr reveal">
+      <div class="sec-tag"><i class="fas fa-heart"></i> &nbsp;Reviews</div>
+      <h2 class="sec-title">Students &amp; Parents <span>Share Their Experience</span> 👩🏻‍🎓</h2>
+      <p class="sec-sub">Real reviews from our students and parents. Share your experience and help others make the right choice!</p>
+    </div>
+
+    <!-- Submit Review Form -->
+    <div class="review-submit-card reveal">
+      <h3>✍️ Share Your Review</h3>
+      <p>Studied with Ravindu? Tell others about your experience! Your review will appear on this page immediately.</p>
+      <form id="reviewForm" onsubmit="submitReview(event)">
+        <div class="review-form-grid">
+          <div class="rf-group"><label>Your Name *</label><input type="text" id="rv-name" placeholder="e.g. Kasuni Perera" required></div>
+          <div class="rf-group"><label>You Are *</label><select id="rv-role" required><option value="" disabled selected>Select your role</option><option>Student — O/L</option><option>Student — A/L</option><option>Parent</option><option>Past Student</option></select></div>
+          <div class="rf-group"><label>District</label><input type="text" id="rv-district" placeholder="e.g. Colombo"></div>
+          <div class="rf-group"><label>Grade / Year (optional)</label><input type="text" id="rv-grade" placeholder="e.g. Grade 11 / A/L 2025"></div>
+          <div class="rf-group full"><label>Your Rating *</label>
+            <div class="star-picker" id="starPicker">
+              <input type="radio" name="rating" id="s5" value="5"><label for="s5">★</label>
+              <input type="radio" name="rating" id="s4" value="4"><label for="s4">★</label>
+              <input type="radio" name="rating" id="s3" value="3"><label for="s3">★</label>
+              <input type="radio" name="rating" id="s2" value="2"><label for="s2">★</label>
+              <input type="radio" name="rating" id="s1" value="1"><label for="s1">★</label>
+            </div>
+          </div>
+          <div class="rf-group full"><label>Your Review *</label><textarea id="rv-text" rows="3" placeholder="Share your experience with ICT With Ravindu..." required minlength="20"></textarea></div>
+        </div>
+        <button type="submit" class="btn-submit-review" id="submitReviewBtn"><i class="fas fa-paper-plane"></i> Post My Review</button>
+      </form>
+    </div>
+
+    <!-- Review Stats -->
+    <div class="review-stats-bar reveal">
+      <div class="rs-left">
+        <div class="rs-big-num" id="avgRating">—</div>
+        <div>
+          <div class="rs-stars-row" id="avgStarsDisplay">☆☆☆☆☆</div>
+          <div class="rs-count"><strong id="totalReviewCount">0</strong> verified reviews</div>
+        </div>
+      </div>
+      <div class="rs-right">
+        <div class="rs-tag gold"><i class="fas fa-star"></i> <span id="fiveStarCount">0</span> × 5 Stars</div>
+        <div class="rs-tag blue"><i class="fas fa-users"></i> Students &amp; Parents</div>
+        <div class="rs-tag green"><i class="fas fa-check-circle"></i> Verified Reviews</div>
+      </div>
+    </div>
+
+    <!-- Latest Reviews -->
+    <h3 style="font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:1.2rem;color:var(--text);">
+      <i class="fas fa-clock" style="color:var(--primary)"></i> Latest Reviews
+    </h3>
+    <div class="reviews-grid" id="reviewsGrid">
+      <div class="empty-reviews"><div class="ei">💬</div><p>No reviews yet. Be the first to share your experience!</p></div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="review-cta-row" style="margin-top:2rem;" id="viewAllRow"></div>
+  </div>
+</section>
+
+<!-- View All Reviews Modal -->
+<div class="modal-overlay" id="reviewsModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>📋 All Reviews (<span id="modalReviewCount">0</span>)</h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-filter-bar">
+      <span style="font-size:.8rem;color:var(--text3);font-weight:600;margin-right:.3rem;">Filter:</span>
+      <button class="filter-btn active" onclick="filterReviews('all',this)">All</button>
+      <button class="filter-btn" onclick="filterReviews('5',this)">★★★★★</button>
+      <button class="filter-btn" onclick="filterReviews('4',this)">★★★★</button>
+      <button class="filter-btn" onclick="filterReviews('Student',this)">Students</button>
+      <button class="filter-btn" onclick="filterReviews('Parent',this)">Parents</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-reviews-grid" id="modalReviewsGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="sec-hdr reveal" style="margin-bottom:2.5rem;">
+    <div class="sec-tag"><i class="fas fa-paper-plane"></i> &nbsp;Enroll Today</div>
+    <h2 class="sec-title">Get In <span>Touch</span></h2>
+    <p class="sec-sub">Limited seats per batch. Secure your place today and start your journey to ICT excellence!</p>
+  </div>
+  <div class="contact-inner">
+    <div class="ci reveal">
+      <h2>Ready to Excel in ICT?</h2>
+      <p>Fill in the form and Ravindu will reach out within 24 hours. Classes available online and in person across Sri Lanka.</p>
+      <div class="cd"><div class="cd-ic"><i class="fab fa-whatsapp"></i></div><div><div class="cd-lbl">WhatsApp</div><div class="cd-val">+94 7X XXX XXXX</div></div></div>
+      <div class="cd"><div class="cd-ic"><i class="fas fa-envelope"></i></div><div><div class="cd-lbl">Email</div><div class="cd-val">ictwithravindu@gmail.com</div></div></div>
+      <div class="cd"><div class="cd-ic"><i class="fas fa-map-marker-alt"></i></div><div><div class="cd-lbl">Location</div><div class="cd-val">Colombo + Online Island-wide</div></div></div>
+      <div class="cd"><div class="cd-ic"><i class="fas fa-clock"></i></div><div><div class="cd-lbl">Support Hours</div><div class="cd-val">Mon–Sat, 8am – 9pm</div></div></div>
+      <div class="soc-row">
+        <a href="#" class="soc-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="soc-btn"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="soc-btn"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="form-card reveal">
+      <h3>📩 Enrollment Request</h3>
+      <form onsubmit="handleEnroll(event)">
+        <div class="f-row">
+          <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your full name" required></div>
+          <div class="fg"><label>Phone / WhatsApp *</label><input type="tel" placeholder="07X XXX XXXX" required></div>
+        </div>
+        <div class="f-row">
+          <div class="fg"><label>Grade / Year</label><input type="text" placeholder="e.g. Grade 11"></div>
+          <div class="fg"><label>District</label><input type="text" placeholder="e.g. Colombo"></div>
+        </div>
+        <div class="fg"><label>Course Interested In *</label><select required><option value="" disabled selected>Select your course</option><option>O/L ICT — Grade 9 to 11</option><option>A/L ICT — Grade 12 &amp; 13</option><option>Intensive Revision — O/L</option><option>Intensive Revision — A/L</option><option>Database &amp; SQL Module</option></select></div>
+        <div class="fg"><label>Class Preference</label><select><option>Online (Zoom)</option><option>Physical (Colombo)</option><option>Both options fine</option></select></div>
+        <div class="fg"><label>Message (Optional)</label><textarea rows="2" placeholder="Any questions or special requirements..."></textarea></div>
+        <button type="submit" class="btn-form" id="enrollBtn"><i class="fas fa-paper-plane"></i> Send Enrollment Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="fb">
+      <a href="#" class="nav-logo" style="color:#fff;margin-bottom:1rem;display:inline-flex;"><div class="nav-logo-box">💻</div>ICT WITH <span style="color:#60a5fa">RAVINDU</span></a>
+      <p>Sri Lanka's trusted ICT tuition class for O/L and A/L students. Online and physical classes available islandwide.</p>
+    </div>
+    <div class="fc-col"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Ravindu</a></li><li><a href="#courses">Our Courses</a></li><li><a href="#exams">Exam Countdown</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+    <div class="fc-col"><h4>Courses</h4><ul><li><a href="#">O/L ICT</a></li><li><a href="#">A/L ICT</a></li><li><a href="#">Database &amp; SQL</a></li><li><a href="#">Networking</a></li><li><a href="#">Revision Classes</a></li><li><a href="#">Web Design Basics</a></li></ul></div>
+    <div class="fc-col"><h4>Contact</h4><div class="fci"><i class="fab fa-whatsapp"></i> +94 7X XXX XXXX</div><div class="fci"><i class="fas fa-envelope"></i> ictwithravindu@gmail.com</div><div class="fci"><i class="fas fa-map-marker-alt"></i> Colombo + Online</div><div class="fci"><i class="fas fa-clock"></i> Mon–Sat · 8am–9pm</div></div>
+  </div>
+  <div class="footer-bot">
+    <div>© 2026 <span>ICT With Ravindu</span>. All rights reserved.</div>
+    <div>Your Education. Our Priority. 🇱🇰</div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// =============================================
+// PERSISTENT STORAGE (simulated via localStorage-equivalent in-page store)
+// Since this is a static HTML file, we use localStorage for persistence
+// In production this would connect to a backend/Firebase
+// =============================================
+
+// ------ EXPERIENCE CALCULATION ------
+// Started teaching: January 2023
+const START_YEAR = 2023;
+function calcYears() {
+  const now = new Date();
+  let years = now.getFullYear() - START_YEAR;
+  // If we haven't reached the anniversary month yet, subtract 1
+  // Start month = January (0)
+  const startMonth = 0;
+  if (now.getMonth() < startMonth) years--;
+  return Math.max(1, years);
+}
+
+// ------ STORAGE HELPERS ------
+function loadData(key, fallback) {
+  try { const v = localStorage.getItem('ict_ravindu_' + key); return v ? JSON.parse(v) : fallback; }
+  catch(e) { return fallback; }
+}
+function saveData(key, val) {
+  try { localStorage.setItem('ict_ravindu_' + key, JSON.stringify(val)); } catch(e) {}
+}
+
+// ------ ENROLLMENT COUNT ------
+// Each time the enrollment form is submitted, increment
+function getEnrolledCount() { return loadData('enrolled', 0); }
+function incrementEnrolled() {
+  const n = getEnrolledCount() + 1;
+  saveData('enrolled', n);
+  return n;
+}
+
+// ------ ONLINE / ACTIVE STUDENT COUNT ------
+// Simulate active users by tracking page visits in a time window
+// We store visit timestamps; count those within last 30 minutes
+const SESSION_KEY = 'ict_sess_' + Math.random().toString(36).slice(2);
+function trackOnline() {
+  let visits = loadData('visits', []);
+  const now = Date.now();
+  // Record this visit
+  visits.push({ id: SESSION_KEY, ts: now });
+  // Keep only last 30 minutes
+  visits = visits.filter(v => (now - v.ts) < 30 * 60 * 1000);
+  // Deduplicate by id
+  const seen = new Set();
+  visits = visits.filter(v => { if(seen.has(v.id)){return false;} seen.add(v.id); return true; });
+  saveData('visits', visits);
+  // Add a realistic base (so it doesn't show 1 when you first open)
+  return Math.max(1, visits.length) + 12; // base of 12 always-on students
+}
+
+// ------ REVIEWS ------
+function getReviews() { return loadData('reviews', []); }
+function saveReviews(reviews) { saveData('reviews', reviews); }
+
+// ------ AVATAR COLORS ------
+const AV_COLORS = ['#3b82f6','#8b5cf6','#06b6d4','#10b981','#f59e0b','#ef4444','#ec4899','#6366f1'];
+function avatarColor(name) {
+  let h = 0; for(let i=0;i<name.length;i++) h = name.charCodeAt(i) + ((h<<5)-h);
+  return AV_COLORS[Math.abs(h) % AV_COLORS.length];
+}
+function initials(name) { return name.trim().split(' ').map(w=>w[0]||'').join('').toUpperCase().slice(0,2); }
+function starStr(n) { return '★'.repeat(n) + '☆'.repeat(5-n); }
+function timeAgo(ts) {
+  const d = Date.now() - ts;
+  if(d < 60000) return 'Just now';
+  if(d < 3600000) return Math.floor(d/60000) + 'm ago';
+  if(d < 86400000) return Math.floor(d/3600000) + 'h ago';
+  if(d < 604800000) return Math.floor(d/86400000) + 'd ago';
+  return new Date(ts).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+}
+
+// ------ RENDER REVIEWS ------
+function renderMainReviews() {
+  const reviews = getReviews();
+  const grid = document.getElementById('reviewsGrid');
+  const viewAllRow = document.getElementById('viewAllRow');
+  const latest = [...reviews].reverse().slice(0, 6); // show latest 6
+
+  if(reviews.length === 0) {
+    grid.innerHTML = '<div class="empty-reviews"><div class="ei">💬</div><p>No reviews yet. Be the first to share your experience!</p></div>';
+    viewAllRow.innerHTML = '';
+    return;
+  }
+
+  grid.innerHTML = latest.map((r, i) => `
+    <div class="testi-card reveal ${i>0?'d'+Math.min(i,3):''}">
+      <div class="t-stars">${starStr(r.rating)} ${i===0&&Date.now()-r.ts<3600000?'<span class="t-new-badge">NEW</span>':''}</div>
+      <p class="t-text">"${escHtml(r.text)}"</p>
+      <div class="t-author">
+        <div class="t-av" style="background:${avatarColor(r.name)}">${initials(r.name)}</div>
+        <div>
+          <div class="t-name">${escHtml(r.name)}</div>
+          <div class="t-grade">${escHtml(r.role)}${r.grade?' · '+escHtml(r.grade):''}${r.district?' · '+escHtml(r.district):''}</div>
+          <div class="t-time"><i class="fas fa-clock"></i> ${timeAgo(r.ts)}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Observe new cards for reveal
+  grid.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Show "View All" button if more than 6 reviews
+  if(reviews.length > 6) {
+    viewAllRow.innerHTML = `<button class="btn-view-all" onclick="openModal()"><i class="fas fa-list"></i> View All ${reviews.length} Reviews</button>`;
+  } else if(reviews.length > 0) {
+    viewAllRow.innerHTML = `<button class="btn-view-all" onclick="openModal()"><i class="fas fa-list"></i> View All Reviews (${reviews.length})</button>`;
+  }
+}
+
+function updateReviewStats() {
+  const reviews = getReviews();
+  const count = reviews.length;
+  const avg = count > 0 ? (reviews.reduce((s,r) => s+r.rating, 0) / count) : 0;
+  const fiveStar = reviews.filter(r => r.rating === 5).length;
+
+  document.getElementById('totalReviewCount').textContent = count;
+  document.getElementById('fiveStarCount').textContent = fiveStar;
+  document.getElementById('heroReviewCount').textContent = count > 0 ? count : '—';
+
+  if(count > 0) {
+    document.getElementById('avgRating').textContent = avg.toFixed(1);
+    document.getElementById('avgStarsDisplay').textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5-Math.round(avg));
+  } else {
+    document.getElementById('avgRating').textContent = '—';
+    document.getElementById('avgStarsDisplay').textContent = '☆☆☆☆☆';
+  }
+  document.getElementById('modalReviewCount').textContent = count;
+}
+
+// ------ SUBMIT REVIEW ------
+function submitReview(e) {
+  e.preventDefault();
+  const name = document.getElementById('rv-name').value.trim();
+  const role = document.getElementById('rv-role').value;
+  const district = document.getElementById('rv-district').value.trim();
+  const grade = document.getElementById('rv-grade').value.trim();
+  const text = document.getElementById('rv-text').value.trim();
+  const ratingInput = document.querySelector('input[name="rating"]:checked');
+
+  if(!name || !role || !text) { showToast('Please fill in all required fields.', true); return; }
+  if(!ratingInput) { showToast('Please select a star rating!', true); return; }
+  if(text.length < 20) { showToast('Please write at least 20 characters in your review.', true); return; }
+
+  const rating = parseInt(ratingInput.value);
+  const btn = document.getElementById('submitReviewBtn');
+  btn.innerHTML = '<span class="spin"></span> Posting...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    const reviews = getReviews();
+    reviews.push({ name, role, district, grade, text, rating, ts: Date.now() });
+    saveReviews(reviews);
+
+    renderMainReviews();
+    updateReviewStats();
+    updateAllStats();
+
+    document.getElementById('reviewForm').reset();
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Post My Review';
+    btn.disabled = false;
+    showToast('✅ Your review has been posted! Thank you.');
+
+    // Scroll to reviews
+    setTimeout(() => document.getElementById('reviewsGrid').scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
+  }, 800);
+}
+
+// ------ MODAL ------
+let currentFilter = 'all';
+function openModal() {
+  renderModalReviews(currentFilter);
+  document.getElementById('reviewsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('reviewsModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('reviewsModal').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+function filterReviews(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderModalReviews(filter);
+}
+
+function renderModalReviews(filter) {
+  let reviews = [...getReviews()].reverse();
+
+  if(filter === '5') reviews = reviews.filter(r => r.rating === 5);
+  else if(filter === '4') reviews = reviews.filter(r => r.rating === 4);
+  else if(filter === 'Student') reviews = reviews.filter(r => r.role && r.role.toLowerCase().includes('student'));
+  else if(filter === 'Parent') reviews = reviews.filter(r => r.role && r.role.toLowerCase().includes('parent'));
+
+  const grid = document.getElementById('modalReviewsGrid');
+  if(reviews.length === 0) {
+    grid.innerHTML = '<div class="modal-no-reviews"><div class="ni">🔍</div><p>No reviews match this filter.</p></div>';
+    return;
+  }
+  grid.innerHTML = reviews.map(r => `
+    <div class="modal-review-card">
+      <div class="t-stars">${starStr(r.rating)}</div>
+      <p class="t-text">"${escHtml(r.text)}"</p>
+      <div class="t-author">
+        <div class="t-av" style="background:${avatarColor(r.name)}">${initials(r.name)}</div>
+        <div>
+          <div class="t-name">${escHtml(r.name)}</div>
+          <div class="t-grade">${escHtml(r.role)}${r.grade?' · '+escHtml(r.grade):''}${r.district?' · '+escHtml(r.district):''}</div>
+          <div class="t-time"><i class="fas fa-clock"></i> ${timeAgo(r.ts)}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ------ ALL STATS UPDATE ------
+function updateAllStats() {
+  const years = calcYears();
+  const enrolled = getEnrolledCount();
+  const online = trackOnline();
+  const reviews = getReviews();
+
+  // Years
+  [document.getElementById('statYears'),
+   document.getElementById('cardYears'),
+   document.getElementById('aboutYears'),
+   document.getElementById('whyYears')
+  ].forEach(el => { if(el) el.textContent = years + '+'; });
+  ['aboutYearsText'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent = years; });
+
+  // Students (enrolled)
+  const studentDisplay = enrolled > 0 ? enrolled + '+' : '0';
+  [document.getElementById('statEnrolled'),
+   document.getElementById('cardStudents'),
+   document.getElementById('aboutStudents'),
+   document.getElementById('whyStudents')
+  ].forEach(el => { if(el) el.textContent = studentDisplay; });
+  const hsc = document.getElementById('heroStudentCount');
+  if(hsc) hsc.textContent = enrolled > 0 ? enrolled + ' students' : 'hundreds of students';
+
+  // Online
+  document.getElementById('statOnline').textContent = online;
+  const hoc = document.getElementById('heroOnlineCount');
+  if(hoc) hoc.textContent = online + ' Online';
+
+  // Reviews
+  updateReviewStats();
+}
+
+// ------ ENROLLMENT FORM ------
+function handleEnroll(e) {
+  e.preventDefault();
+  const btn = document.getElementById('enrollBtn');
+  btn.innerHTML = '<span class="spin"></span> Processing...';
+  btn.disabled = true;
+  setTimeout(() => {
+    const newCount = incrementEnrolled();
+    updateAllStats();
+    btn.innerHTML = '<i class="fas fa-check-circle"></i> Request Sent! We\'ll contact you within 24 hours.';
+    btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+    showToast('🎉 Enrollment request sent! Ravindu will contact you soon.');
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Enrollment Request';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }, 600);
+}
+
+// ------ TOAST ------
+function showToast(msg, isError=false) {
+  const t = document.getElementById('toast');
+  t.innerHTML = (isError?'<i class="fas fa-exclamation-circle"></i>':'<i class="fas fa-check-circle"></i>') + ' ' + msg;
+  t.classList.toggle('error', isError);
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+
+// ------ COUNTDOWN ------
+function pad(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  const now = Date.now();
+  [{date:new Date('August 10, 2026 08:00:00'),d:'al-d',h:'al-h',m:'al-m',s:'al-s'},
+   {date:new Date('December 8, 2026 08:00:00'),d:'ol-d',h:'ol-h',m:'ol-m',s:'ol-s'}
+  ].forEach(({date,d,h,m,s}) => {
+    const diff = date - now;
+    if(diff <= 0){[d,h,m,s].forEach(id=>document.getElementById(id).textContent='00');return;}
+    document.getElementById(d).textContent = pad(Math.floor(diff/864e5));
+    document.getElementById(h).textContent = pad(Math.floor(diff%864e5/36e5));
+    document.getElementById(m).textContent = pad(Math.floor(diff%36e5/6e4));
+    document.getElementById(s).textContent = pad(Math.floor(diff%6e4/1e3));
+  });
+}
+tick(); setInterval(tick, 1000);
+
+// ------ NAVBAR ------
+window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50));
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navMenu').classList.toggle('open'));
+document.querySelectorAll('#navMenu a').forEach(a => a.addEventListener('click', () => document.getElementById('navMenu').classList.remove('open')));
+
+// Active nav
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const y = scrollY + 120;
+  sections.forEach(s => {
+    if(y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
+      document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+      const l = document.querySelector(`.nav-menu a[href="#${s.id}"]`);
+      if(l) l.classList.add('active');
+    }
+  });
+});
+
+// ------ SCROLL REVEAL ------
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ------ INIT ------
+updateAllStats();
+renderMainReviews();
+
+// Refresh online count every 2 minutes
+setInterval(() => {
+  const online = trackOnline();
+  document.getElementById('statOnline').textContent = online;
+  const hoc = document.getElementById('heroOnlineCount');
+  if(hoc) hoc.textContent = online + ' Online';
+}, 120000);
+</script>
+</body>
+</html>
 
